@@ -1,12 +1,118 @@
+    {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>NyondoStock | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+         body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f3f6;
+        }
+
+        /* NAVBAR */
+        .navbar{
+            width: 250px;
+            height: 100vh;
+            background: #1e1f26;
+            color: white;
+            position: fixed;
+            padding: 20px;
+        }
+
+        .navbar h1{
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #ff9800;
+        }
+
+        .navbar ul{
+            list-style: none;
+            padding: 0;
+        }
+
+        .navbar ul li{
+            margin: 12px 0;
+        }
+
+        .navbar ul li a{
+            text-decoration: none;
+            color: #d6d6d6;
+            display: block;
+            padding: 12px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .navbar ul li a:hover{
+            background: #ff9800;
+            color: white;
+        }
+
+        /* MAIN CONTENT */
+        .container{
+            margin-left: 270px;
+            padding: 30px;
+        }
+
+        /* CARD STYLE (same as dashboard) */
+        .card{
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* FOOTER */
+        footer{
+            margin-left: 270px;
+            padding: 15px;
+            text-align: center;
+            background: white;
+            color: #666;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 270px);
+        }
+    </style>
+
+    </style>
 </head>
 <body>
-    <h1>Welcome Admin</h1>
-    
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>NyondoStock</h1>
+        <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'stock' %}">Stock</a></li>
+            <li><a href="{% url 'sales' %}">Sales</a></li>
+            <li><a href="{% url 'credit' %}">Supplier Credit</a></li>
+            <li><a href="{% url 'deposit' %}">Deposit Scheme</a></li>
+            <li><a href="{% url 'transport' %}">Transport</a></li>
+            <li><a href="{% url 'reports' %}">Reports</a></li>
+        </ul>
+    </div>
+
+    <!-- Body Content -->
+    <div class="container">
+        {% block content %}
+        <div class="card">
+            <h2>Welcome to NyondoStock</h2>
+            <p>This is your centralized dashboard for managing stock, sales, credit, deposits, and transport.</p>
+        </div>
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Nyondo General Hardware LTD
+    </footer>
+</body>
+</html>
+
 </body>
 </html>

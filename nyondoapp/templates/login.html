@@ -6,47 +6,84 @@
     <title>LOGIN PAGE</title>
 </head>
 <style>
-    body{
-        margin: 0;
-        font-family: Arial;
-        background: #0b1f3a;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: white;
-    }
-    .login-container{
-        background: #1b5e20;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        text-align: center;
-    }
-    h2{
-        text-align: center;
-        ;
-    }
-    input{
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: none;
-        border-radius: 5px;
-    }
-    button{
-        width: 100%;
-        padding: 10px;
-        background: #1b5e20;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    button:hover{
-        background: #145a16;
-    }
+    {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NyondoStock Login</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f3f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* LOGIN CARD */
+        .login-container{
+            background: white;
+            padding: 40px;
+            width: 350px;
+            border-radius: 18px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid #ff9800;
+        }
+
+        .login-container h2{
+            margin-bottom: 25px;
+            color: #1e1f26;
+        }
+
+        /* INPUTS */
+        .login-container input{
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .login-container input:focus{
+            border-color: #ff9800;
+            box-shadow: 0 0 5px rgba(255,152,0,0.4);
+        }
+
+        /* BUTTON */
+        .login-container button{
+            width: 100%;
+            padding: 12px;
+            background: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .login-container button:hover{
+            background: #e68900;
+            transform: translateY(-2px);
+        }
+
+        /* SMALL TEXT */
+        .login-container p{
+            margin-top: 15px;
+            font-size: 13px;
+            color: gray;
+        }
 </style>
 <body>
     <div class="login-container">
